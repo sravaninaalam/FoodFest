@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "name": "Naalam Sravani",
+      "mail": "sravaninalam2000@gmail.com",
+      "password": "Sravani1@",
+      "id": 1
+    },
+    {
+      "name": "Naalam Sravani",
+      "mail": "sravaninalam2000@gmail.com",
+      "password": "Sravani1@",
+      "id": 2
+    }
+  ]
+}
