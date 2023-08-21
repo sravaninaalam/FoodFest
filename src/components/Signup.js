@@ -19,8 +19,8 @@ const Signup = () => {
                   .required("required").min(8,"Should not lessthan 8")
                 })}
                 onSubmit={(values)=>{
-                  // fetch("http://localhost:3030/users",{
-                    fetch("/.netlify/functions/server/users",{
+                  fetch("http://localhost:3030/users",{
+                    // fetch("/.netlify/functions/server/users",{
                     method:"POST",
                     headers:{
                       "Content-Type":"application/json"

@@ -20,8 +20,8 @@ const Login = () => {
                   .required("required").min(8,"Should not lessthan 8")
                 })}
                 onSubmit={async(values,onSubmitProps)=>{
-                //  const res=await fetch("http://localhost:3030/users/")
-                const res=await fetch("/.netlify/functions/server/users/")
+                 const res=await fetch("http://localhost:3030/users/")
+                // const res=await fetch("/.netlify/functions/server/users/")
                  const json=await res.json()
                  Object.values(json).forEach(i=>{
                   if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password){
