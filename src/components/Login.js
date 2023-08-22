@@ -21,21 +21,21 @@ const Login = () => {
                 })}
                 onSubmit={async(values,onSubmitProps)=>{
                 //  const res=await fetch("http://localhost:3030/users/")
-                const res=await fetch("/.netlify/functions/server/users/")
-                 const json=await res.json()
-                 Object.values(json).forEach(i=>{
-                  if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password){
+                // const res=await fetch("/.netlify/functions/server/users/")
+                //  const json=await res.json()
+                //  Object.values(json).forEach(i=>{
+                //   if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password){
                         setName(values.name)
                         onSubmitProps.resetForm()
                       toast.success("Login!")
                       setTimeout(() => {
                         navigate("/home")
                    }, 1500);
-                  }
-                  else{
-                    toast.error("Enter valid credentials")
-                  }
-                })
+                //   }
+                //   else{
+                //     toast.error("Enter valid credentials")
+                //   }
+                // })
                 }
                 }>
               <div className='bg-slate-200 w-96 mx-auto my-5 p-5 shadow-md rounded-lg'>
