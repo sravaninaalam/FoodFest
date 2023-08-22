@@ -4,6 +4,7 @@ import Rescard from './Rescard'
 import Shimmer from './Shimmer'
 import { searchFunc } from '../utils/helper'
 import { Link } from 'react-router-dom'
+import {useOnline} from '../utils/customhooks'
 
 const Body = () => {
      const[resData,setResData]=useState([])
@@ -21,6 +22,10 @@ const Body = () => {
         setClonedata(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
        
    }
+   const isonline=useOnline()
+   if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are ofline 🔴</h1>}
+
+
   return !clonedata?<Shimmer/>:(
   <>
     <div>
