@@ -1,13 +1,13 @@
 export const LOGO_URL="https://th.bing.com/th/id/OIP.QF0qTgM2ppXnuQPlW7OeFwHaHf?pid=ImgDet&rs=1"
 
 export const CDN_IMG_URL =
-  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+  "https://corsproxy.io/?https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
 export const HTL_MENU=
-"https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9522009&lng=77.7002645&restaurantId="
+"https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9522009&lng=77.7002645&restaurantId="
 
 export const HOME_API=
-"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9522009&lng=77.7002645&page_type=DESKTOP_WEB_LISTING"
+"https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9522009&lng=77.7002645&page_type=DESKTOP_WEB_LISTING"
 
 export const Green_Rating_Img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn2fO06E83wILT6e9SNlK8MUEtKGAAmj8kzQ&usqp=CAU"
  
