@@ -20,13 +20,13 @@ const Signup = () => {
                 })}
                 onSubmit={(values)=>{
                   // fetch("http://localhost:3030/users",{
-                    fetch("/.netlify/functions/server/users",{
-                    method:"POST",
-                    headers:{
-                      "Content-Type":"application/json"
-                   },
-                   body:JSON.stringify(values)
-                  })
+                  //   fetch("/.netlify/functions/server/users",{
+                  //   method:"POST",
+                  //   headers:{
+                  //     "Content-Type":"application/json"
+                  //  },
+                  //  body:JSON.stringify(values)
+                  // })
                   toast.success("Successfully registered")
                   setTimeout(()=>{
                     navigate('/login')
