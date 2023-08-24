@@ -27,10 +27,10 @@ const Login = () => {
                 //   if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password){
                         setName(values.name)
                         onSubmitProps.resetForm()
-                      toast.success("Login!")
+                      toast.success("Login successfull!")
                       setTimeout(() => {
                         navigate("/home")
-                   }, 1500);
+                   }, 2000);
                 //   }
                 //   else{
                 //     toast.error("Enter valid credentials")
