@@ -13,7 +13,7 @@ const CartCard=({info})=>{
  return(
    <>
    <ToastContainer theme='colored'/>
-        <div className="bg-gray-100 hover:bg-gray-300 m-4 p-1 w-72 shadow-lg">
+        <div className="bg-gray-100 hover:bg-gray-300 m-4 p-1 w-72 shadow-lg outline outline-blue-200 rounded-lg">
                          <img src={CDN_IMG_URL+imageId} alt={name} className="rounded-lg w-28 p-1"/>
                          <h1 className="font-bold">{name}</h1>
                          <h5 className="truncate hover:overflow-y-
