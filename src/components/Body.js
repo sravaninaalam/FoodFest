@@ -29,9 +29,9 @@ const Body = () => {
   return !clonedata?<Shimmer/>:(
   <>
     <div>
-      <div className='w-6/12 mx-auto my-4'>
+      <div className='w-full mx-4 md:w-6/12 md:mx-auto my-4'>
             <form onSubmit={(e)=>e.preventDefault()} className=''>
-                    <input type='text' placeholder="search Restaurants" className='border border-black w-1/2 ml-4 rounded-l-full p-2'
+                    <input type='text' placeholder="search Restaurants" className='border border-black w-58  md:w-1/2 ml-4 rounded-l-full p-2'
                     value={searchip} onChange={(e)=>setSearchIp(e.target.value)}/>
 
                     <button type='submit' data-testid='search' className='bg-gray-100 py-2 px-5 border border-black rounded-r-full'

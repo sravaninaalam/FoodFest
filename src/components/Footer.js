@@ -3,8 +3,8 @@ const Footer = () => {
   
   return (
    <>
-    <div className='flex bg-gray-100 justify-between '>
-        <div className='mx-5'>
+    <div className='bg-gray-100 justify-between w-screen flex'>
+        <div className=' mx-1 md:mx-5 '>
               <h3 className='font-medium' >Contact Us</h3>
               <ul className='text-slate-700'>
                 <li>
@@ -15,7 +15,7 @@ const Footer = () => {
                 <li>FAQ</li>
               </ul>
           </div>
-          <div className='mx-5'>
+          <div className='mx-5 '>
               <h3 className='font-medium'>About</h3>
               <ul className='text-slate-700'>
                 <li>
@@ -26,7 +26,7 @@ const Footer = () => {
                
               </ul>
           </div>
-        <div  className='mx-5'>
+        <div  className='mx-5 '>
            <h3 className='font-medium'>Ordering</h3>
            <ul className='text-slate-700'>
               <li>How it works</li>

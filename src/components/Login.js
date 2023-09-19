@@ -20,37 +20,39 @@ const Login = () => {
                   .required("required").min(8,"Should not lessthan 8")
                 })}
                 onSubmit={async(values,onSubmitProps)=>{
-                //  const res=await fetch("http://localhost:3030/users/")
-                // const res=await fetch("/.netlify/functions/server/users/")
-                //  const json=await res.json()
-                //  Object.values(json).forEach(i=>{
-                //   if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password){
-                        setName(values.name)
-                        onSubmitProps.resetForm()
-                      toast.success("Login successfull!")
+                 const res=await fetch("https://foodapp-json.onrender.com/users/")
+            
+                 const json=await res.json()
+                 Object.values(json).forEach(i=>{
+                  if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password)
+                  {
+                    toast.success("Login successfull!")
+                      setName(values.name)
+                      onSubmitProps.resetForm()
+                     
                       setTimeout(() => {
                         navigate("/home")
-                   }, 2000);
-                //   }
-                //   else{
-                //     toast.error("Enter valid credentials")
-                //   }
-                // })
+                      }, 2000);
+                  }
+                  else{
+                    toast.error("Enter valid credentials")
+                  }
+                })
                 }
                 }>
-              <div className='bg-slate-200 w-96 mx-auto my-5 p-5 shadow-md rounded-lg'>
+              <div className='bg-slate-200 w-2/3 md:w-96 mx-10 md:mx-auto my-5 p-5 shadow-md rounded-lg'>
              
                 <h2 className='font-serif text-lg font-semibold text-center'>Login Form</h2>
                 <Form>
                      <label>Username:</label>
-                     <Field type='text' name='name' className='w-72 border border-black rounded-md p-1 m-2'/>
+                     <Field type='text' name='name' className='w-56 md:w-72 border border-black rounded-md p-1 m-2'/>
                      <h2 className='text-red-400'><ErrorMessage name='name'/></h2>
 
                      <label>password:</label>
-                     <Field type='password' name='password' className='w-72 border border-black rounded-md p-1 m-2'/>
+                     <Field type='password' name='password' className='w-56 md:w-72 border border-black rounded-md p-1 m-2'/>
                      <h2 className='text-red-400'><ErrorMessage name='password'/></h2>
 
-                     <button type='submit' className=' m-2 p-1 w-72 bg-blue-400 rounded-md'>Login</button>
+                     <button type='submit' className=' m-2 p-1 w-56 md:w-72 bg-blue-400 rounded-md'>Login</button>
                 </Form>
                 <p>Don't have an account ?<Link to='/signup'><span className='text-lg font-medium'>Signup</span></Link></p>
               </div>
