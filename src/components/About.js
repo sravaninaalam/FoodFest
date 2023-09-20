@@ -32,20 +32,18 @@ function About(){
              <Section title="Tech Stack" visible={show==='details'} setShow={()=>setShow('details')} hide={()=>setShow(null)}
               description={
               <ul className='mx-8 my-3 list-disc'>
-                <li>This application is developed using <span className='font-bold'>React</span></li>
-                <li>Here I used <span className='font-bold'>Parcel</span> to bundle things</li>
-                <li>The application is created using functional components,inbuilt hooks,custom hooks </li>
-                <li>The data is fetched from <span className='font-bold'>Swiggy's live Api</span></li>
-                <li>created inbuilt<span className='font-bold'>Shimmer Ui</span>to make the user friendly UI</li>
-                <li>To make application Look more beautiful <span className='font-bold'>Tailwind css</span>is used</li>
-                <li>To manage application state globally <span className='font-bold'>React Redux</span>is used</li>
-                <li>To navigate through pages<span className='font-bold'>React Router</span>is used which enables Client side routing</li>
+                <li><span className='font-bold'>React: </span> The heart and soul of our app, ensuring dynamic and responsive user interfaces.</li>
+                <li><span className='font-bold'>Parcel: </span> A blazing-fast web application bundler, keeping our app performant.</li>
+                <li><span className='font-bold'>Tailwind CSS :</span> Making our UI sleek, stylish, and customizable</li>
+                <li><span className='font-bold'>Redux Toolkit: </span> For state management that's both efficient and developer-friendly.</li>
+                <li>For effortless navigation <span className='font-bold'>React Router</span> is used which enables Client side routing</li>
               </ul>
              }/>
              <Section title="Features" visible={show==='feature'} setShow={()=>setShow('feature')} hide={()=>setShow(null)}
              description={
               <ul  className='mx-8 my-3 list-disc'>
                  <li> Explore Delicious Menus offered by Top Restaurants</li>
+                 <li>Swiggy's Live Api data</li>
                  <li> Effortless Ordering</li>
                  <li>Dazzling Shimmer UI</li>
                  <li>Search Restaurants</li>
