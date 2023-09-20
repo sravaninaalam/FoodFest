@@ -27,8 +27,6 @@ const Login = () => {
                   if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password)
                   {
                     toast.success("Login successfull!")
-                      
-                     
                       setTimeout(() => {
                         setName(values.name)
                         onSubmitProps.resetForm()
