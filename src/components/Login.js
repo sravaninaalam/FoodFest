@@ -27,10 +27,11 @@ const Login = () => {
                   if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password)
                   {
                     toast.success("Login successfull!")
-                      setName(values.name)
-                      onSubmitProps.resetForm()
+                      
                      
                       setTimeout(() => {
+                        setName(values.name)
+                        onSubmitProps.resetForm()
                         navigate("/home")
                       }, 2000);
                   }
