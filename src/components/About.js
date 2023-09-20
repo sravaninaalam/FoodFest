@@ -42,6 +42,17 @@ function About(){
                 <li>To navigate through pages<span className='font-bold'>React Router</span>is used which enables Client side routing</li>
               </ul>
              }/>
+             <Section title="Features" visible={show==='feature'} setShow={()=>setShow('feature')} hide={()=>setShow(null)}
+             description={
+              <ul  className='mx-8 my-3 list-disc'>
+                 <li> Explore Delicious Menus offered by Top Restaurants</li>
+                 <li> Effortless Ordering</li>
+                 <li>Dazzling Shimmer UI</li>
+                 <li>Search Restaurants</li>
+                 <li> Error Handling - 404 Page</li>
+                 <li> Fully Responsive</li>
+              </ul>
+             }/>
          </div>
       </>
     )
