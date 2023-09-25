@@ -1,4 +1,4 @@
-export const LOGO_URL="https://th.bing.com/th/id/OIP.QF0qTgM2ppXnuQPlW7OeFwHaHf?pid=ImgDet&rs=1"
+export const LOGO_URL="https://th.bing.com/th/id/OIP.kBZa16OHvR3FzGiY9sAeOAHaH0?pid=ImgDet&rs=1"
 
 export const CDN_IMG_URL =
   "https://corsproxy.io/?https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
