@@ -45,11 +45,11 @@ const Login = () => {
                 <Form>
                      <label>Username:</label>
                      <Field type='text' name='name' className='w-56 md:w-72 border border-black rounded-md p-1 m-2'/>
-                     <h2 className='text-red-400'><ErrorMessage name='name'/></h2>
+                     <h2 className='text-red-500'><ErrorMessage name='name'/></h2>
 
                      <label>password:</label>
                      <Field type='password' name='password' className='w-56 md:w-72 border border-black rounded-md p-1 m-2'/>
-                     <h2 className='text-red-400'><ErrorMessage name='password'/></h2>
+                     <h2 className='text-red-500'><ErrorMessage name='password'/></h2>
 
                      <button type='submit' className=' m-2 p-1 w-56 md:w-72 bg-blue-400 rounded-md'>Login</button>
                 </Form>
