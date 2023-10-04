@@ -4,7 +4,7 @@ import Userclass from './Userclass'
 function Section({title,description,visible,setShow,hide}){
   return(
     <>
-        <div className=' my-4 p-2 mx-10 border border-black bg-lime-50'>
+        <div className=' my-4 md:p-2 md:mx-10 mx-1 border border-blue-200 bg-lime-50'>
          <h2 className="font-bold">{title}</h2>
          {visible ?
               <div>
@@ -24,7 +24,7 @@ function About(){
   
     return(
       <>
-         <div className='mt-5 mx-10'>
+         <div className='mt-5 md:mx-10 mx-0'>
           <Section title="Developed By" visible={show==='developed'} setShow={()=>setShow('developed')} hide={()=>setShow(null)}
           description=
              {<Userclass name={"sravani"} location={"Vizianagaram, Andhrapradesh , India"} mail={"nalamsravani2016@gmail.com"}/>}
