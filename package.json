@@ -25,9 +25,18 @@
     "process": "^0.11.10",
     "tailwindcss": "^3.3.3"
   },
-  "browserslist": [
-    "last 2 versions"
-  ],
+  "browserslist":{
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "name": "foodfest",
   "version": "1.0.0",
   "scripts": {
