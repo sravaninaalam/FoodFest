@@ -35,7 +35,7 @@ const CartCard=({info})=>{
 
 const Cart = () => {
   const cart_items=useSelector(store=>store.cart.items)
-  console.log(cart_items)
+  
  const dispatch=useDispatch()
   return (
      <>   

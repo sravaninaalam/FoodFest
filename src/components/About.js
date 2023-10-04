@@ -27,7 +27,7 @@ function About(){
          <div className='mt-5 mx-10'>
           <Section title="Developed By" visible={show==='developed'} setShow={()=>setShow('developed')} hide={()=>setShow(null)}
           description=
-             {<Userclass name={"sravani"} location={"Vizianagaram,Andhrapradesh,India"} mail={"nalamsravani2016@gmail.com"}/>}
+             {<Userclass name={"sravani"} location={"Vizianagaram, Andhrapradesh , India"} mail={"nalamsravani2016@gmail.com"}/>}
              />
              <Section title="Tech Stack" visible={show==='details'} setShow={()=>setShow('details')} hide={()=>setShow(null)}
               description={

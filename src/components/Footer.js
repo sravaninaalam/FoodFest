@@ -3,8 +3,9 @@ const Footer = () => {
   
   return (
    <>
-    <div className='bg-gray-100 justify-between w-screen flex'>
-        <div className=' mx-1 md:mx-5 '>
+  
+    <div className='bg-gray-100 md:justify-between flex flex-wrap '>
+        <div className='mx-5 md:my-0 my-5'>
               <h3 className='font-medium' >Contact Us</h3>
               <ul className='text-slate-700'>
                 <li>
@@ -15,7 +16,7 @@ const Footer = () => {
                 <li>FAQ</li>
               </ul>
           </div>
-          <div className='mx-5 '>
+          <div className='mx-5  md:my-0 my-5'>
               <h3 className='font-medium'>About</h3>
               <ul className='text-slate-700'>
                 <li>
@@ -26,7 +27,7 @@ const Footer = () => {
                
               </ul>
           </div>
-        <div  className='mx-5 '>
+        <div  className='mx-5  md:my-0 my-5'>
            <h3 className='font-medium'>Ordering</h3>
            <ul className='text-slate-700'>
               <li>How it works</li>
@@ -35,7 +36,7 @@ const Footer = () => {
               <li>Refund Policy</li>
            </ul>
         </div>
-        <div  className='mx-5'>
+        <div  className='mx-5  md:my-0 my-5'>
           <h3 className='font-medium'>Legal</h3>
           <ul className='text-slate-700'>
              <li>Terms of service</li>
@@ -43,14 +44,14 @@ const Footer = () => {
              <li>Cookies</li>
           </ul>
         </div>
-        <div  className='mx-5'>
+        <div  className='mx-5  md:my-0 my-5'>
           <h3 className='font-medium'>Download Our App</h3>
           <ul className='text-slate-700'>
             <li>Link to App store</li>
             <li>Link to Play store</li>
           </ul>
         </div>
-        <div className='mx-5'>
+        <div className='mx-5  md:my-0 my-5'>
             <h3 className='font-medium'>Partnerships</h3>
             <ul className='text-slate-700'>
                 <li>Become partner</li>

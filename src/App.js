@@ -13,6 +13,7 @@ import Cart from './components/Cart'
 import {Provider} from 'react-redux'
 import store from './redux/store'
 import userContext from './utils/userContext'
+
 const App = () => {
   const[name,setName]=useState('')
   
@@ -20,8 +21,8 @@ const App = () => {
     <>
     <Provider store={store}>
      <userContext.Provider value={{logUserName:name,setName}}>
-          <Header/>
-      
+        
+       <Header/>
         <Outlet/>
         <Footer/>
         </userContext.Provider>

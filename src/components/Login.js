@@ -23,23 +23,28 @@ const Login = () => {
                  const res=await fetch("https://foodapp-json.onrender.com/users/")
             
                  const json=await res.json()
-                 Object.values(json).forEach(i=>{
+                 Object.values(json).
+             
+                 forEach(i=>{
                   if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password)
                   {
-                    toast.success("Login successfull!")
+                     
                       setTimeout(() => {
                         setName(values.name)
                         onSubmitProps.resetForm()
                         navigate("/home")
-                      }, 2000);
+                       
+                       }, 200);
                   }
                   else{
-                    toast.error("Enter valid credentials")
+                    toast.error("invalid credentials")
                   }
-                })
+                    
+                }
+                  )
                 }
                 }>
-              <div className='bg-slate-200 w-2/3 md:w-96 mx-10 md:mx-auto my-5 p-5 shadow-md rounded-lg'>
+              <div className='bg-slate-200 w-2/3 md:w-96 mx-10 md:mx-auto my-5 p-5 shadow-xl rounded-xl'>
              
                 <h2 className='font-serif text-lg font-semibold text-center'>Login Form</h2>
                 <Form>
