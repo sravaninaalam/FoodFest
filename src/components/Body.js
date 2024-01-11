@@ -18,8 +18,8 @@ const Body = () => {
         const data=await fetch(HOME_API)
         const json=await data.json()
         // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0])
-        setResData(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setClonedata(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setResData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setClonedata(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
        
    }
    const isonline=useOnline()
@@ -32,7 +32,7 @@ const Body = () => {
       <div className='w-full mx-4 md:w-6/12 md:mx-auto my-4'>
             <form onSubmit={(e)=>e.preventDefault()} >
                     <input type='text' placeholder="search Restaurants" className='border border-black w-auto  md:w-1/2 ml-4 rounded-l-full p-2'
-                    value={searchip} onChange={(e)=>setSearchIp(e.target.value)}/>
+                    value={searchip} onChange={(e)=>setSearchIp(e.target.value)}/>    
 
                     <button type='submit' data-testid='search' className='bg-gray-100 py-2 px-5 border border-black rounded-r-full'
                     onClick={()=>{const res=searchFunc(searchip,clonedata)
