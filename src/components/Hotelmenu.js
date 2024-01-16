@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import { useMenu } from '../utils/customhooks'
 import Shimmer from './Shimmer'
 import Restaurantcategory from './Restaurantcategory'
-import { CDN_IMG_URL } from '../utils/constants'
+import { CDN_URL_CORS } from '../utils/constants'
 const Hotelmenu = () => {
   const {resId}=useParams()
  const[showItemsIndex,setShowItemsIndex]=useState()
@@ -20,7 +20,7 @@ const Hotelmenu = () => {
    <>
        <div className="text-center my-5">
                 <div className='flex justify-center'>
-                  <img src={CDN_IMG_URL+cloudinaryImageId} alt={name} className='h-28 w-32 rounded-md '/>
+                  <img src={CDN_URL_CORS+cloudinaryImageId} alt={name} className='h-28 w-32 rounded-md '/>
                   <div className='ml-7'>
                     <h1 className="font-bold text-xl">{name}</h1>  
                     <h3>{cuisines.join(',')}</h3> 

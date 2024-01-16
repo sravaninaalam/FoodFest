@@ -14,3 +14,8 @@ export const Green_Rating_Img="https://encrypted-tbn0.gstatic.com/images?q=tbn:A
 export const Yellow_Rating_Img="https://thumbs.dreamstime.com/b/five-point-yellow-star-icon-154791548.jpg"
 
 export const Cart_Empty_Img="https://media.istockphoto.com/vectors/fast-food-chef-on-roller-skates-vector-id470852560?k=6&m=470852560&s=612x612&w=0&h=FsJsHwZlvFqbYQm_ke8rWceWr8FQpbWSHfGaikIEgRk="
+export const HOME_API_CORS=`https://api.allorigins.win/raw?url=${encodeURIComponent(HOME_API)}`
+export const HTL_MENU_CORS=`https://api.allorigins.win/raw?url=${encodeURIComponent(HTL_MENU)}`
+export const CDN_URL_CORS=
+`https://api.allorigins.win/raw?url=${CDN_IMG_URL}`
+

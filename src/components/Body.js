@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react'
-import { HOME_API } from '../utils/constants'
+import { HOME_API_CORS } from '../utils/constants'
 import Rescard from './Rescard'
 import Shimmer from './Shimmer'
 import { searchFunc } from '../utils/helper'
@@ -15,7 +15,7 @@ const Body = () => {
         getHotelData()
      },[])
    const getHotelData=async()=>{
-        const data=await fetch(HOME_API)
+        const data=await fetch(HOME_API_CORS)
         const json=await data.json()
         // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0])
         setResData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
