@@ -1,5 +1,5 @@
 import React from 'react'
-import { CDN_URL_CORS,Yellow_Rating_Img,Green_Rating_Img } from '../utils/constants'
+import { CDN_IMG_URL,Yellow_Rating_Img,Green_Rating_Img } from '../utils/constants'
 
 const Rescard = ({reslist}) => {
     const{cloudinaryImageId,name,cuisines,avgRating, costForTwo}=reslist
@@ -8,7 +8,7 @@ const Rescard = ({reslist}) => {
         <div  data-testid='rescard' 
         className="bg-gray-100 rounded-lg m-4 p-1 w-64 ml-6 hover:bg-gray-200 outline outline-blue-200" >
 
-           <img src={CDN_URL_CORS+cloudinaryImageId} alt={name} className='p-2 rounded-2xl'/>
+           <img src={CDN_IMG_URL+cloudinaryImageId} alt={name} className='p-2 rounded-2xl'/>
            <h3 className="font-bold">{name}</h3>
             <h4 className="truncate">{cuisines.join(',')}</h4>
 

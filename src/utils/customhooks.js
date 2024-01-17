@@ -1,12 +1,12 @@
 import { useState,useEffect } from "react"
-import {HTL_MENU} from './constants'
+import {HTL_MENU_CORS} from './constants'
 export const useMenu = (resId) => {
     const[menuData,setMenuData]=useState(null)
     useEffect(()=>{
         getMenuData()
     },[])
     async function getMenuData(){
-        const data=await fetch(HTL_MENU+resId)
+        const data=await fetch(HTL_MENU_CORS+resId)
         const json=await data.json()
         // console.log(json.data)
       setMenuData(json?.data)
