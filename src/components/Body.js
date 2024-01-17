@@ -2,15 +2,18 @@ import {useEffect,useState} from 'react'
 import { HOME_API_CORS } from '../utils/constants'
 import Rescard from './Rescard'
 import Shimmer from './Shimmer'
-import { searchFunc } from '../utils/helper'
+import { searchFunc, settings } from '../utils/helper'
 import { Link } from 'react-router-dom'
 import {useOnline} from '../utils/customhooks'
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Displayfood from './Displayfood'
 const Body = () => {
      const[resData,setResData]=useState([])
      const[clonedata,setClonedata]=useState([])
      const[searchip,setSearchIp]=useState('')
-
+     const[items,setItems]=useState([])
      useEffect(()=>{
         getHotelData()
      },[])
@@ -20,7 +23,7 @@ const Body = () => {
         // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0])
         setResData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setClonedata(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-       
+        setItems(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
    }
    const isonline=useOnline()
    if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are ofline 🔴</h1>}
@@ -43,6 +46,13 @@ const Body = () => {
                     setResData(filtered)}}>Toprated</button>
             </form>
       </div>
+      <h1 className='p-3 m-3 font-bold italic text-2xl'>What's on your mind🤔</h1>
+       <div className='w-10/12 px-5 mx-auto shadow-sm bg-slate-50'>
+            <Slider {...settings} >
+                      {items.map((item)=><Displayfood key={item?.id} itemlist={item}/>)}
+            </Slider>
+        </div>
+      
       <div className='w-11/12 mx-auto flex flex-wrap'>
            {resData.map(restaurant=>
            <Link to={'/hotelmenu/'+restaurant?.info?.id} key={restaurant?.info?.id}><Rescard reslist={restaurant?.info}/></Link>
