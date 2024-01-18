@@ -16,7 +16,8 @@ const Hotelmenu = () => {
    }=menuData?.cards[0]?.card.card.info
    const category= menuData?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
        filter(c=>c.card?.card?.["@type"]==='type.googleapis.com/swiggy.presentation.food.v2.ItemCategory')
-  return (
+  
+       return (
    <>
        <div className="text-center my-5">
                 <div className='flex justify-center'>
