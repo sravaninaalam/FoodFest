@@ -37,6 +37,7 @@ function About(){
                 <li><span className='font-bold'>Tailwind CSS :</span> Making our UI sleek, stylish, and customizable</li>
                 <li><span className='font-bold'>Redux Toolkit: </span> For state management that's both efficient and developer-friendly.</li>
                 <li>For effortless navigation <span className='font-bold'>React Router</span> is used which enables Client side routing</li>
+                <li><span className='font-bold'>React-Slick</span> library  for creating carousels </li>
               </ul>
              }/>
              <Section title="Features" visible={show==='feature'} setShow={()=>setShow('feature')} hide={()=>setShow(null)}
