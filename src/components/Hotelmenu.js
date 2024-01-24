@@ -6,7 +6,7 @@ import Restaurantcategory from './Restaurantcategory'
 import { CDN_IMG_URL } from '../utils/constants'
 const Hotelmenu = () => {
   const {resId}=useParams()
- const[showItemsIndex,setShowItemsIndex]=useState()
+ const[showIndex,setShowIndex]=useState()
    const menuData=useMenu(resId)
    if(!menuData){
     return <Shimmer/>
@@ -29,8 +29,8 @@ const Hotelmenu = () => {
                     </div>
                 </div>
                     {category.map((category,index)=><Restaurantcategory key={category.card.card.title} 
-                    category={category?.card?.card} showItems={index===showItemsIndex}
-                    setShowItemsIndex={()=>setShowItemsIndex(index)}  hide={()=>setShowItemsIndex(null)}/>)}
+                    category={category?.card?.card} show={index===showIndex?true:false}
+                    setShowIndex={index===showIndex?()=>setShowIndex():()=>setShowIndex(index)}  />)}
             </div> 
    </>
   )
