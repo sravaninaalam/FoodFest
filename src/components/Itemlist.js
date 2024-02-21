@@ -3,6 +3,10 @@ import {useDispatch} from 'react-redux'
 import {addItem} from '../redux/cartSlice'
 function Itemslist({items}){
   const dispatch=useDispatch()
+  const handleAddItem=(item)=>{
+    const{name,id,imageId,price,description  }=item?.card?.info
+     dispatch(addItem({id:id,name:name,imageId:imageId,price:price,description:description,quantity:1}))
+  }
     return(
        <>
         <div>
@@ -16,7 +20,7 @@ function Itemslist({items}){
                 <div className="w-3/12">
                  <img src={CDN_IMG_URL+item.card.info.imageId} alt={item?.card?.info?.name} />
                  <button className="text-green-800 p-2 shadow-lg rounded-sm"
-                 onClick={()=>dispatch(addItem(item?.card?.info))}>ADD+</button>
+                 onClick={()=>handleAddItem(item)}>ADD+</button>
 
                 </div>
                
