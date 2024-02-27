@@ -1,14 +1,24 @@
 import { CDN_IMG_URL } from "../utils/constants"
 import {useDispatch} from 'react-redux'
 import {addItem} from '../redux/cartSlice'
+import { useState } from "react"
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 function Itemslist({items}){
+  const[addedToCart,setAddedToCart]=useState([])
   const dispatch=useDispatch()
   const handleAddItem=(item)=>{
     const{name,id,imageId,price,description  }=item?.card?.info
+     setAddedToCart(id)
+     if(addedToCart.includes(id)){
+      toast.info("already added to cart")
+      return
+     }
      dispatch(addItem({id:id,name:name,imageId:imageId,price:price,description:description,quantity:1}))
   }
     return(
        <>
+       <ToastContainer theme="colored"/>
         <div>
             {items.map(item=>
             <div data-testid="items-list" key={item?.card?.info?.id} className=" border-gray-200 border-b-2 m-2 p-2 flex justify-between">
