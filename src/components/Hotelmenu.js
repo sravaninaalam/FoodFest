@@ -12,8 +12,8 @@ const Hotelmenu = () => {
     return <Shimmer/>
    }
 
-  const {name,cuisines,costForTwoMessage,cloudinaryImageId}=menuData?.cards[0]?.card.card.info
-   const category= menuData?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
+  const {name,cuisines,costForTwoMessage,cloudinaryImageId}=menuData?.cards[2]?.card.card.info
+   const category= menuData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
        filter(c=>c.card?.card?.["@type"]==='type.googleapis.com/swiggy.presentation.food.v2.ItemCategory')
   
        return (
