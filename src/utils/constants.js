@@ -1,8 +1,8 @@
 export const LOGO_URL="https://th.bing.com/th/id/OIP.cN8cpc5H8uEGrZz2Wdk8yAHaH_?pid=ImgDet&rs=1"
 // "https://corsproxy.io/?
-export const CDN_IMG_URL =
- "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+// export const CDN_IMG_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
+ export const CDN_IMG_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,/"
 export const HTL_MENU=
 "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9522009&lng=77.7002645&restaurantId="
 
