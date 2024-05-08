@@ -11,7 +11,7 @@ const Header = () => {
     const[open,setOpen]=useState(false)
   return (
     <>
-        <div className='bg-violet-300 w-full shadow-sm md:flex  md:justify-between sticky top-0'>
+        <div className='bg-indigo-400 w-screen shadow-sm md:flex  md:justify-between sticky top-0'>
             <div className='flex justify-between items-center'>
             
               <Link to='/'><img src={LOGO_URL}className='h-20 py-3 rounded-full'/></Link>
@@ -19,8 +19,8 @@ const Header = () => {
                     {open?<X className='ml-7 md:hidden'/>:<AlignJustify className='ml-7 md:hidden'/>}
                 </div>
              </div>
-             <ul className={` md:flex items-center absolute md:static  w-full md:w-auto
-              ${open?'top-20 opacity-100':'top-[-490px]'}
+             <ul className={`bg-gray-600  md:bg-indigo-400 text-white md:h-auto h-96  ml-40  md:ml-0 md:w-auto w-56 md:flex items-center absolute md:static  
+              ${open?'top-20 opacity-100':'top-[-490px] '}
              `}>
                <Link to='/'><li className='mx-4 my-4 md:my-0 font-medium  hover:text-pink-500 flex'>
                   <Home className=" md:mx-1"/>Home</li></Link>
