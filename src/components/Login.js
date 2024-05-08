@@ -44,7 +44,7 @@ const Login = () => {
                   )
                 }
                 }>
-              <div className='bg-slate-200 w-60 md:w-96 mx-10 md:mx-auto my-5 p-5 shadow-xl rounded-xl'>
+              <div className='bg-slate-200 w-72 md:w-96 mx-10 md:mx-auto my-5 p-5 shadow-xl rounded-xl'>
              
                 <h2 className='font-serif text-lg font-semibold text-center'>Login Form</h2>
                 <Form>
@@ -56,7 +56,7 @@ const Login = () => {
                      <Field type='password' name='password' className='w-auto md:w-72 border border-black rounded-md p-1 m-2'/>
                      <h2 className='text-red-500'><ErrorMessage name='password'/></h2>
 
-                     <button type='submit' className=' m-2 p-1 w-48 md:w-72 bg-blue-400 rounded-md'>Login</button>
+                     <button type='submit' className=' m-3 p-1 w-48 md:w-72 bg-blue-400 rounded-md'>Login</button>
                 </Form>
                 <p>Don't have an account ?<Link to='/signup'><span className='text-lg font-medium'>Signup</span></Link></p>
               </div>

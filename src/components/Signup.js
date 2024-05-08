@@ -33,7 +33,7 @@ const Signup = () => {
                   },1200)
                   
                 }}>
-              <div className='bg-slate-200 w-60 md:w-96 mx-10 md:mx-auto my-5 p-5 shadow-md rounded-lg'>
+              <div className='bg-slate-200 w-2/3 md:w-96 mx-10 md:mx-auto my-5 p-5 shadow-md rounded-lg'>
                 <h2 className='font-serif text-lg font-semibold text-center'>Signup Form</h2>
                 <Form>
                      <label>FullName:</label>
