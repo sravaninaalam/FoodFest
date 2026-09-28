@@ -1,28 +1,35 @@
 import React from 'react'
-import { CDN_IMG_URL,Yellow_Rating_Img,Green_Rating_Img } from '../utils/constants'
+import { CDN_IMG_URL } from '../utils/constants'
 
-const Rescard = ({reslist}) => {
-    const{cloudinaryImageId,name,cuisines,avgRating, costForTwo}=reslist
+const Rescard = ({ reslist }) => {
+  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } = reslist
+
   return (
-   <>
-        <div  data-testid='rescard' 
-        className="bg-gray-100 rounded-lg m-4 p-1 w-64 ml-6 hover:bg-gray-200 outline outline-blue-200" >
-
-           <img src={CDN_IMG_URL+cloudinaryImageId} alt={name} className='p-2 rounded-2xl'/>
-           <h3 className="font-bold">{name}</h3>
-            <h4 className="truncate">{cuisines.join(',')}</h4>
-
-                <div className='flex m-1 p-1'>
-                    {avgRating>4?<h4 className="w-5 h-5  flex">
-                    <img src={Green_Rating_Img} className="rounded-lg"/><span>{avgRating}</span>
-                    </h4>:<h4 className="w-6 h-6  flex">
-                        <img className="rounded-lg" src={Yellow_Rating_Img}/>
-                        {avgRating}</h4>}
-                    <h4 className="ml-28">{costForTwo}</h4>
-                </div>
-        </div>
-
-   </>
+    <div
+      data-testid="rescard"
+      className="m-4 w-64 rounded-lg border border-orange-100 bg-white p-3 shadow-sm transition hover:shadow-md"
+    >
+      <img
+        src={CDN_IMG_URL + cloudinaryImageId}
+        alt={name}
+        className="h-40 w-full rounded-md object-cover"
+        onError={(e) => {
+          e.target.src = 'https://via.placeholder.com/256x160?text=Restaurant'
+        }}
+      />
+      <h3 className="mt-2 truncate font-bold text-gray-800">{name}</h3>
+      <p className="truncate text-sm text-gray-500">{cuisines.join(', ')}</p>
+      <div className="mt-2 flex items-center justify-between text-sm">
+        <span
+          className={`rounded px-2 py-0.5 font-medium text-white ${
+            avgRating > 4 ? 'bg-green-600' : 'bg-orange-500'
+          }`}
+        >
+          ★ {avgRating}
+        </span>
+        <span className="text-gray-600">{costForTwo}</span>
+      </div>
+    </div>
   )
 }
 
