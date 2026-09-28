@@ -1,4 +1,5 @@
-import { useState,useEffect } from "react"
+import { useState, useEffect } from 'react'
+import { getMockMenu } from './mockData'
 import {HTL_MENU_CORS} from './constants'
 // export const useMenu = (resId) => {
 //     const[menuData,setMenuData]=useState(null)
