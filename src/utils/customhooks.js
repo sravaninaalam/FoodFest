@@ -1,20 +1,32 @@
 import { useState,useEffect } from "react"
 import {HTL_MENU_CORS} from './constants'
+// export const useMenu = (resId) => {
+//     const[menuData,setMenuData]=useState(null)
+//     useEffect(()=>{
+//         getMenuData()
+//     },[])
+//     async function getMenuData(){
+//         const data=await fetch(HTL_MENU_CORS+resId)
+//         const json=await data.json()
+//         // console.log(json.data)
+//       setMenuData(json?.data)
+//     }
+//   return menuData
+// }
+
 export const useMenu = (resId) => {
-    const[menuData,setMenuData]=useState(null)
-    useEffect(()=>{
-        getMenuData()
-    },[])
-    async function getMenuData(){
-        const data=await fetch(HTL_MENU_CORS+resId)
-        const json=await data.json()
-        // console.log(json.data)
-      setMenuData(json?.data)
-    }
+  const [menuData, setMenuData] = useState(null)
+
+  useEffect(() => {
+    // Small delay so shimmer UI is visible during demos
+    const timer = setTimeout(() => {
+      setMenuData(getMockMenu(resId))
+    }, 400)
+    return () => clearTimeout(timer)
+  }, [resId])
+
   return menuData
 }
-
-
 export const useOnline=()=>{
 
   const[onlinestatus,setOnlineStatus]=useState(true)
