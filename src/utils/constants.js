@@ -19,3 +19,8 @@ export const HTL_MENU_CORS=`https://api.allorigins.win/raw?url=${encodeURICompon
 export const CDN_URL_CORS=
 `https://api.allorigins.win/raw?url=${CDN_IMG_URL}`
 
+
+
+
+export const PLACEHOLDER_IMG =
+  'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,/rxawufahokq3ycr6vlg2'
