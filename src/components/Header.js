@@ -19,7 +19,7 @@ const Header = () => {
                     {open?<X className='ml-7 md:hidden'/>:<AlignJustify className='ml-7 md:hidden'/>}
                 </div>
              </div>
-             <ul className={`bg-gray-600  md:bg-indigo-400 text-white md:h-auto h-96  ml-40  md:ml-0 md:w-auto w-56 md:flex items-center absolute md:static  
+             <ul className={`bg-gray-600  md:bg-orange-400 text-white md:h-auto h-96  ml-40  md:ml-0 md:w-auto w-56 md:flex items-center absolute md:static  
               ${open?'top-20 opacity-100':'top-[-490px] '}
              `}>
                <Link to='/'><li className='mx-4 my-4 md:my-0 font-medium  hover:text-pink-500 flex'>
