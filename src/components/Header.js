@@ -11,7 +11,7 @@ const Header = () => {
     const[open,setOpen]=useState(false)
   return (
     <>
-        <div className='bg-indigo-400 w-screen shadow-sm md:flex  md:justify-between sticky top-0'>
+        <div className='bg-orange-400 w-screen shadow-sm md:flex  md:justify-between sticky top-0'>
             <div className='flex justify-between items-center'>
             
               <Link to='/'><img src={LOGO_URL}className='h-20 py-3 rounded-full'/></Link>
