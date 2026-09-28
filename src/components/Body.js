@@ -21,8 +21,8 @@ const Body = () => {
         const data=await fetch(HOME_API_CORS)
         const json=await data.json()
         // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0])
-        setResData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setClonedata(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setResData(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setClonedata(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setItems(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
    }
    const isonline=useOnline()
