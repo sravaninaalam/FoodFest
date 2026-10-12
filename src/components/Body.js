@@ -26,8 +26,8 @@ const Body = () => {
   // }, [])
 useEffect(()=>{
   async function fetchData() {
-    let res=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9522009&lng=77.7002645&page_type=DESKTOP_WEB_LISTING")
-     const json=await res.json()
+    // let res=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9522009&lng=77.7002645&page_type=DESKTOP_WEB_LISTING")
+    //  const json=await res.json()
     //  console.log(json?.data)
   // console.log('data after fetching',json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
      setResData(mockRestaurants)
@@ -36,7 +36,7 @@ useEffect(()=>{
       setLoading(false)
   }
   fetchData()
-})
+},[])
 
 
   const applyFilters = (cuisine, searchText = searchip) => {
@@ -61,7 +61,11 @@ useEffect(()=>{
     const next = activeCuisine === cuisine ? null : cuisine
     setActiveCuisine(next)
     applyFilters(next, searchip)
-    listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+   
+      listRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
   }
 
   const clearCategory = () => {
@@ -70,13 +74,13 @@ useEffect(()=>{
   }
 
   const isonline = useOnline()
-  if (!isonline) {
-    return (
-      <h1 className="m-8 text-center text-xl font-semibold text-red-600">
-        You are offline. Check your internet connection.
-      </h1>
-    )
-  }
+  // if (!isonline) {
+  //   return (
+  //     <h1 className="m-8 text-center text-xl font-semibold text-red-600">
+  //       You are offline. Check your internet connection.
+  //     </h1>
+  //   )
+  // }
 
   if (loading) return <Shimmer />
 
@@ -92,7 +96,11 @@ useEffect(()=>{
             placeholder="Search restaurants"
             className="flex-1 rounded border border-gray-300 px-3 py-2 outline-none focus:border-orange-400"
             value={searchip}
-            onChange={(e) => setSearchIp(e.target.value)}
+             onChange={(e) => {
+                const value = e.target.value;
+                setSearchIp(value);
+                applyFilters(activeCuisine, value);
+              }}
           />
           <button
             type="submit"
@@ -174,8 +182,8 @@ useEffect(()=>{
         ref={listRef}
         className="mx-auto flex w-11/12 max-w-6xl flex-wrap justify-center"
       >
-        {/* {resData.length === 0 ? ( */}
-        {!resData?(
+        {resData.length === 0 ? (
+      
           <p className="py-10 text-lg text-gray-600">
             No restaurants found
             {activeCuisine ? ` for ${activeCuisine}` : ''}.
