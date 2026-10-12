@@ -5,12 +5,13 @@ import { clearCart } from '../redux/cartSlice'
 import { addOrder } from '../redux/orderSlice'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
+import { useAuth } from '../utils/userContext';
 const Payment = () => {
   const cartItems = useSelector((store) => store.cart.items)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
+  
+  const { user } = useAuth();
   const [form, setForm] = useState({
     name: '',
     cardNumber: '',
@@ -59,15 +60,16 @@ const Payment = () => {
     setPaying(true)
 
     setTimeout(() => {
+     
       const order = {
         id: 'ORD' + Date.now(),
+        userEmail: user.mail,
         date: new Date().toLocaleString(),
         items: cartItems.map((item) => ({ ...item })),
         total: Number(total.toFixed(0)),
         paymentMethod: 'Card',
         status: 'Paid',
-      }
-
+      };
       dispatch(addOrder(order))
       dispatch(clearCart())
       toast.success('Payment successful!')
