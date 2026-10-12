@@ -1,16 +1,22 @@
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-
+import { useAuth } from '../utils/userContext';
 const Orders = () => {
-  const orders = useSelector((store) => store.orders.list)
 
+ const orders = useSelector((store) => store.orders.list);
+const { user } = useAuth();
+
+const myOrders = orders.filter(
+  (order) => order.userEmail === user?.mail
+);
   return (
+   
     <div className="min-h-screen bg-orange-50 pb-10">
       <h1 className="pt-6 text-center text-2xl font-bold text-gray-800">
         My Orders
       </h1>
-
-      {!orders.length ? (
+  
+      {!myOrders.length ? (
         <div className="mt-10 text-center text-gray-600">
           <p>No orders yet.</p>
           <Link to="/home" className="mt-3 inline-block font-semibold text-orange-600">
@@ -19,7 +25,7 @@ const Orders = () => {
         </div>
       ) : (
         <div className="mx-auto mt-6 w-11/12 max-w-3xl space-y-4">
-          {orders.map((order) => (
+          {myOrders.map((order) => (
             <div
               key={order.id}
               className="rounded-lg border border-orange-100 bg-white p-4 shadow-sm"
