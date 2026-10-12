@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -13,19 +13,12 @@ import Payment from './components/Payment'
 import Orders from './components/Orders'
 import { Provider } from 'react-redux'
 import store from './redux/store'
-import userContext from './utils/userContext'
-
+import ProtectedRoute from './components/ProtectedRoute';
+import { AuthProvider } from './utils/userContext';
 const App = () => {
-  const [name, setName] = useState('')
-
-  useEffect(() => {
-    const saved = localStorage.getItem('foodfest_user')
-    if (saved) setName(saved)
-  }, [])
-
   return (
-    <Provider store={store}>
-      <userContext.Provider value={{ logUserName: name, setName }}>
+    <AuthProvider>
+      <Provider store={store}>
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">
@@ -33,11 +26,10 @@ const App = () => {
           </main>
           <Footer />
         </div>
-      </userContext.Provider>
-    </Provider>
-  )
-}
-
+      </Provider>
+    </AuthProvider>
+  );
+};
 const ErrorPage = () => (
   <div className="py-20 text-center">
     <h1 className="text-2xl font-bold text-red-600">404 - Page Not Found</h1>
@@ -56,8 +48,22 @@ const appRouter = createBrowserRouter([
       { path: '/about', element: <About /> },
       { path: '/hotelmenu/:resId', element: <Hotelmenu /> },
       { path: '/cart', element: <Cart /> },
-      { path: '/payment', element: <Payment /> },
-      { path: '/orders', element: <Orders /> },
+      {
+        path: '/payment',
+        element: (
+          <ProtectedRoute>
+            <Payment />
+          </ProtectedRoute>
+        ),
+      },
+    {
+        path: '/orders',
+        element: (
+          <ProtectedRoute>
+            <Orders />
+          </ProtectedRoute>
+        ),
+    },
       { path: '/login', element: <Login /> },
       { path: '/signup', element: <Signup /> },
     ],
