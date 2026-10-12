@@ -1,4 +1,6 @@
-export const LOGO_URL="https://th.bing.com/th/id/OIP.cN8cpc5H8uEGrZz2Wdk8yAHaH_?pid=ImgDet&rs=1"
+// export const LOGO_URL="https://th.bing.com/th/id/OIP.cN8cpc5H8uEGrZz2Wdk8yAHaH_?pid=ImgDet&rs=1"
+export const LOGO_URL ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY0RkJ62Zdd9P-mEKY3NgQOvD9-JT43dU1mCPv6i8H_llxfen3fln7RDQ&s=10'
+ 
 // "https://corsproxy.io/?
 // export const CDN_IMG_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
