@@ -1,28 +1,31 @@
-import React, { useContext, useState } from 'react'
+import React, {  useState } from 'react'
 import { LOGO_URL } from '../utils/constants'
 import { AlignJustify, X, Home, ShoppingCart, BadgeInfo, UserSquare2, Package } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import userContext from '../utils/userContext'
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../utils/userContext';
 
 const Header = () => {
   const cart_items = useSelector((store) => store.cart.items)
-  const { logUserName, setName } = useContext(userContext)
+const { logUserName, isAuthenticated, logout } = useAuth();
+const navigate = useNavigate();
   const [open, setOpen] = useState(false)
 
   const cartCount = cart_items.reduce((sum, item) => sum + item.quantity, 0)
 
   const handleLogout = () => {
-    setName('')
-    localStorage.removeItem('foodfest_user')
-  }
+  logout();
+  setOpen(false);
+  navigate('/');
+};
 
   return (
     <header className="sticky top-0 z-20 bg-orange-500 text-white shadow">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2 cursor-none">
           <img src={LOGO_URL} alt="FoodFest" className="h-12 w-12 rounded-full object-cover" />
-          <span className="text-lg font-bold">FoodFest</span>
+          <span className="text-xl font-bold italic">HomeFinds</span>
         </Link>
 
         <button
@@ -35,32 +38,32 @@ const Header = () => {
         </button>
 
         <ul
-          className={`absolute left-0 right-0 top-16 flex flex-col gap-4 bg-orange-600 px-6 py-4 md:static md:flex md:flex-row md:items-center md:bg-transparent md:px-0 md:py-0 ${
+          className={` font-semibold absolute left-0 right-0 top-16 flex flex-col gap-4 bg-orange-600 px-6 py-4 md:static md:flex md:flex-row md:items-center md:bg-transparent md:px-0 md:py-0 ${
             open ? 'flex' : 'hidden md:flex'
           }`}
         >
           <li>
             <Link to="/" className="flex items-center gap-1 hover:underline" onClick={() => setOpen(false)}>
-              <Home size={18} /> Home
+              <Home size={20} /> Home
             </Link>
           </li>
           <li>
             <Link to="/about" className="flex items-center gap-1 hover:underline" onClick={() => setOpen(false)}>
-              <BadgeInfo size={18} /> About
+              <BadgeInfo size={20} /> About
             </Link>
           </li>
           <li>
             <Link to="/cart" className="flex items-center gap-1 hover:underline" onClick={() => setOpen(false)}>
-              <ShoppingCart size={18} /> Cart ({cartCount})
+              <ShoppingCart size={20} /> Cart ({cartCount})
             </Link>
           </li>
           <li>
             <Link to="/orders" className="flex items-center gap-1 hover:underline" onClick={() => setOpen(false)}>
-              <Package size={18} /> Orders
+              <Package size={20} /> Orders
             </Link>
           </li>
           <li>
-            {logUserName ? (
+            {isAuthenticated ? (
               <div className="flex items-center gap-3">
                 <span className="font-semibold">Hi, {logUserName}</span>
                 <button
