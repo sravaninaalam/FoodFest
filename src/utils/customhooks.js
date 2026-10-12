@@ -1,19 +1,5 @@
 import { useState, useEffect } from 'react'
 import { getMockMenu } from './mockData'
-import {HTL_MENU_CORS} from './constants'
-// export const useMenu = (resId) => {
-//     const[menuData,setMenuData]=useState(null)
-//     useEffect(()=>{
-//         getMenuData()
-//     },[])
-//     async function getMenuData(){
-//         const data=await fetch(HTL_MENU_CORS+resId)
-//         const json=await data.json()
-//         // console.log(json.data)
-//       setMenuData(json?.data)
-//     }
-//   return menuData
-// }
 
 export const useMenu = (resId) => {
   const [menuData, setMenuData] = useState(null)
@@ -28,18 +14,22 @@ export const useMenu = (resId) => {
 
   return menuData
 }
-export const useOnline=()=>{
 
-  const[onlinestatus,setOnlineStatus]=useState(true)
-  const handleOnline=()=>setOnlineStatus(true)
-  const handleOffline=()=>setOnlineStatus(false)
-  useEffect(()=>{
-      window.addEventListener("online",handleOnline)
-      window.addEventListener("offline",handleOffline)
-      return()=>{
-        window.removeEventListener("online",handleOnline)
-        window.removeEventListener("offline",handleOffline)
-      }
-  },[])
-  return onlinestatus
+export const useOnline = () => {
+  const [onlineStatus, setOnlineStatus] = useState(
+    typeof navigator !== 'undefined' ? navigator.onLine : true
+  )
+
+  useEffect(() => {
+    const handleOnline = () => setOnlineStatus(true)
+    const handleOffline = () => setOnlineStatus(false)
+    window.addEventListener('online', handleOnline)
+    window.addEventListener('offline', handleOffline)
+    return () => {
+      window.removeEventListener('online', handleOnline)
+      window.removeEventListener('offline', handleOffline)
+    }
+  }, [])
+
+  return onlineStatus
 }
