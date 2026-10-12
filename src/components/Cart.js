@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Billingpage from './Billingpage'
-
+import { ShoppingCart } from 'lucide-react'
 const CartCard = ({ info }) => {
   const { id, name, imageId, price, defaultPrice, quantity } = info
   const dispatch = useDispatch()
@@ -105,12 +105,13 @@ const Cart = () => {
         </>
       ) : (
         <div className="m-8 text-center">
-          <img
+          <ShoppingCart size={30} className='mx-auto '/>
+          {/* <img
             src={Cart_Empty_Img}
             alt="Empty cart"
             className="mx-auto h-48 w-48 object-contain"
-          />
-          <p className="mt-4 text-lg text-gray-600">
+          /> */}
+          <p className="mt-4 text-lg text-black">
             Cart is empty.{' '}
             <Link to="/home" className="font-bold text-orange-600">
               Go to Home
